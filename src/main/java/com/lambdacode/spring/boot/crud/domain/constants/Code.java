@@ -1,4 +1,4 @@
-package com.lambdacode.spring.boot.crud.constants;
+package com.lambdacode.spring.boot.crud.domain.constants;
 
 public enum Code {
     TEST,
@@ -9,6 +9,7 @@ public enum Code {
     MISSING_REQUEST_HEADER,
     MISSING_PATH_VARIABLE,
     NOT_READABLE,
-    NOT_SUPPORTED
+    NOT_SUPPORTED,
+    REQUEST_VALIDATION_ERROR,
 }
 

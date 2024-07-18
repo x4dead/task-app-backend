@@ -1,7 +1,8 @@
 package com.lambdacode.spring.boot.crud.controller;
-
+import com.lambdacode.spring.boot.crud.domain.api.task.addTask.AddTaskReq;
+import com.lambdacode.spring.boot.crud.domain.api.task.updateTask.UpdateTaskReq;
 import com.lambdacode.spring.boot.crud.entity.Task;
-import com.lambdacode.spring.boot.crud.response.Response;
+import com.lambdacode.spring.boot.crud.domain.response.Response;
 import com.lambdacode.spring.boot.crud.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class TaskController {
      */
 
         @PostMapping("/add")
-    public ResponseEntity<Response> addTask(@RequestBody Task user) {
-            return taskService.addTask(user);
+    public ResponseEntity<Response> addTask(@RequestBody AddTaskReq req) {
+            return taskService.addTask(req);
 
     }
 
@@ -57,8 +58,8 @@ public class TaskController {
      */
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Response> updateDescription(@PathVariable Integer id, @RequestBody String description) {
-        return taskService.updateDescription(id, description);
+    public ResponseEntity<Response> updateNameOrDescription(@PathVariable Integer id, @RequestBody UpdateTaskReq req) {
+        return taskService.updateNameOrDescription(id, req);
     }
 
 }

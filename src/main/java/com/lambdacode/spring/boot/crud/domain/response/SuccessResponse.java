@@ -1,4 +1,4 @@
-package com.lambdacode.spring.boot.crud.response;
+package com.lambdacode.spring.boot.crud.domain.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

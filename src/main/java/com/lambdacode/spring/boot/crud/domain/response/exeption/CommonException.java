@@ -1,5 +1,5 @@
-package com.lambdacode.spring.boot.crud.response.exeption;
-import com.lambdacode.spring.boot.crud.constants.Code;
+package com.lambdacode.spring.boot.crud.domain.response.exeption;
+import com.lambdacode.spring.boot.crud.domain.constants.Code;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;

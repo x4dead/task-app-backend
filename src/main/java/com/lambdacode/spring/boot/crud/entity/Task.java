@@ -1,5 +1,5 @@
 package com.lambdacode.spring.boot.crud.entity;
-
+import com.lambdacode.spring.boot.crud.domain.api.task.addTask.AddTaskReq;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,9 +14,9 @@ public class Task {
     private int id;
     private byte status;
     private String description;
-    @PrePersist
-    public void prePersist() {
-        this.status = 0;
-        this.description="";
+    private String name;
+
+    public Task reqToTask(AddTaskReq req){
+        return new Task(req.getId(),req.getStatus(),req.getDescription(),req.getName());
     }
 }

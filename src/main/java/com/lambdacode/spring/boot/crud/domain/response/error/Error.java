@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.response.error;
+package com.lambdacode.spring.boot.crud.domain.response.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.lambdacode.spring.boot.crud.constants.Code;
+import com.lambdacode.spring.boot.crud.domain.constants.Code;
 import lombok.Builder;
 import lombok.Data;
 

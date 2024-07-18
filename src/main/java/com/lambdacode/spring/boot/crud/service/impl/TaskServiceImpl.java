@@ -1,12 +1,16 @@
 package com.lambdacode.spring.boot.crud.service.impl;
-import com.lambdacode.spring.boot.crud.constants.Code;
+import com.lambdacode.spring.boot.crud.domain.api.task.addTask.AddTaskReq;
+import com.lambdacode.spring.boot.crud.domain.api.task.updateTask.UpdateTaskReq;
+import com.lambdacode.spring.boot.crud.domain.constants.Code;
 import com.lambdacode.spring.boot.crud.entity.Task;
 import com.lambdacode.spring.boot.crud.repository.TaskRepository;
-import com.lambdacode.spring.boot.crud.response.Response;
-import com.lambdacode.spring.boot.crud.response.SuccessResponse;
-import com.lambdacode.spring.boot.crud.response.exeption.CommonException;
+import com.lambdacode.spring.boot.crud.domain.response.Response;
+import com.lambdacode.spring.boot.crud.domain.response.SuccessResponse;
+import com.lambdacode.spring.boot.crud.domain.response.exeption.CommonException;
 import com.lambdacode.spring.boot.crud.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lambdacode.spring.boot.crud.utils.ValidationUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,8 +19,14 @@ import java.util.List;
 
 @Service
 public class TaskServiceImpl implements TaskService {
-    @Autowired
-    private TaskRepository taskRepository;
+    private static final Logger log = LoggerFactory.getLogger(TaskServiceImpl.class);
+    private final TaskRepository taskRepository;
+    private final ValidationUtils  validationUtils;
+
+    public TaskServiceImpl(TaskRepository taskRepository, ValidationUtils validationUtils) {
+        this.taskRepository = taskRepository;
+        this.validationUtils = validationUtils;
+    }
 
     private Task  checkTask(int id){
     return taskRepository.findById(id)
@@ -26,8 +36,10 @@ public class TaskServiceImpl implements TaskService {
      * add task
      */
     @Override
-    public ResponseEntity<Response> addTask(Task task) {
-//int s= 1/0;
+    public ResponseEntity<Response> addTask(AddTaskReq req) {
+        validationUtils.validationRequest(req);
+        final Task task = new Task().reqToTask(req);
+        //        int s= 1/0;
         taskRepository.save(task);
         return new ResponseEntity<>((SuccessResponse.builder().data("Task added successfully").build()), HttpStatus.CREATED);
     }
@@ -56,10 +68,32 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public ResponseEntity<Response> updateDescription(int id, String description) {
+    public ResponseEntity<Response> updateNameOrDescription(int id,  UpdateTaskReq req) {
         Task task = checkTask(id);
-        task.setDescription( description);
+        final String desc=req.getDescription();
+        final String name= req.getName();
+        if(desc==null&& name==null){
+            throw CommonException.builder().code(Code.BAD_REQUEST).message("Nothing to update").httpStatus(HttpStatus.BAD_REQUEST).build();
+        }
+        validationUtils.validationRequest(req);
+         String message="Task ";
+
+        if(desc!=null){
+            task.setDescription(desc);
+            message +="description ";
+            log.info("DESCRIPTION: {}", desc);
+            log.info("NAME: {}", name);
+        }
+        if(name!=null){
+            task.setName(name);
+            if(desc!=null){
+                message +="and ";
+            }
+            message +="name ";
+        }
+
         taskRepository.save(task);
-        return new ResponseEntity<>(( SuccessResponse.builder().data("Task updated successfully").build()),HttpStatus.OK);
+        message+="updated successfully";
+        return new ResponseEntity<>(( SuccessResponse.builder().data(message).build()),HttpStatus.OK);
     }
 }

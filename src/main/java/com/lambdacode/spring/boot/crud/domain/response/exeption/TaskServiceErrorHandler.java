@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.response.exeption;
-import com.lambdacode.spring.boot.crud.response.error.Error;
-import com.lambdacode.spring.boot.crud.constants.Code;
-import com.lambdacode.spring.boot.crud.response.error.ErrorResponse;
+package com.lambdacode.spring.boot.crud.domain.response.exeption;
+import com.lambdacode.spring.boot.crud.domain.response.error.Error;
+import com.lambdacode.spring.boot.crud.domain.response.error.ErrorResponse;
+import com.lambdacode.spring.boot.crud.domain.constants.Code;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
