@@ -76,7 +76,7 @@ public class TaskServiceImpl implements TaskService {
             throw CommonException.builder().code(Code.BAD_REQUEST).message("Nothing to update").httpStatus(HttpStatus.BAD_REQUEST).build();
         }
         validationUtils.validationRequest(req);
-         String message="Task ";
+         String message= "Task ";
 
         if(desc!=null){
             task.setDescription(desc);
