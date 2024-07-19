@@ -23,6 +23,6 @@ Task API implements custom exception handling to ensure robust error management 
 
 ## Contributing 🤝
 
-Contributions to the SpeedSync RESTful API project are welcome! If you have any ideas for improvements, bug fixes, or new features, feel free to submit a pull request or open an issue on GitHub.
+Contributions to the Task RESTful API project are welcome! If you have any ideas for improvements, bug fixes, or new features, feel free to submit a pull request or open an issue on GitHub.
 
 ---
