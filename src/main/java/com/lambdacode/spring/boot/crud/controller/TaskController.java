@@ -54,7 +54,7 @@ public class TaskController {
     }
 
     /**
-     * update description
+     * update task
      */
 
     @PutMapping("/update/{id}")
