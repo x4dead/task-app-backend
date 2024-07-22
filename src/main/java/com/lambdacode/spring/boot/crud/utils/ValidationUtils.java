@@ -1,6 +1,6 @@
 package com.lambdacode.spring.boot.crud.utils;
-import com.lambdacode.spring.boot.crud.domain.constants.Code;
-import com.lambdacode.spring.boot.crud.domain.response.exeption.CommonException;
+import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
+import com.lambdacode.spring.boot.crud.commons.response.exeption.CommonException;
 import jakarta.validation.ConstraintViolation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +28,8 @@ public class ValidationUtils {
                         .map(ConstraintViolation::getMessage)
                         .reduce((s1, s2) -> s1 + ". " + s2).orElse("");
                 log.error("Переданный в запросе json не валиден, ошибки валидации: {}", resultValidations);
-                throw CommonException.builder().code(Code.REQUEST_VALIDATION_ERROR).message(resultValidations).httpStatus(HttpStatus.BAD_REQUEST).build();
+                throw CommonException.builder().code(StatusCode.REQUEST_VALIDATION_ERROR)
+                        .message(resultValidations).httpStatus(HttpStatus.BAD_REQUEST).build();
             }
         }
     }

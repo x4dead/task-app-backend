@@ -1,6 +1,5 @@
-package com.lambdacode.spring.boot.crud.repository;
+package com.lambdacode.spring.boot.crud.entity;
 
-import com.lambdacode.spring.boot.crud.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TaskRepository extends JpaRepository<Task, Integer> {

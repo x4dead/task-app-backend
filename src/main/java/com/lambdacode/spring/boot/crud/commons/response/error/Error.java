@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.domain.response.error;
+package com.lambdacode.spring.boot.crud.commons.response.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.lambdacode.spring.boot.crud.domain.constants.Code;
+import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,6 +10,6 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class Error {
-    private Code code;
+    private StatusCode code;
     private String message;
 }

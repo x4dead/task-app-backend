@@ -1,6 +1,6 @@
-package com.lambdacode.spring.boot.crud.domain.constants;
+package com.lambdacode.spring.boot.crud.commons.enums;
 
-public enum Code {
+public enum StatusCode {
     TEST,
     INTERNAL_SERVER_ERROR,
     NOT_FOUND,
