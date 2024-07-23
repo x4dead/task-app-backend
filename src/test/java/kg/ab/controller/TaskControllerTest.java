@@ -1,4 +1,4 @@
-package com.lambdacode.spring.boot.crud.controller;
+package kg.ab.controller;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -8,10 +8,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lambdacode.spring.boot.crud.commons.enums.TaskStatus;
-import com.lambdacode.spring.boot.crud.service.task.dto.UpdateTaskReq;
-import com.lambdacode.spring.boot.crud.entity.Task;
-import com.lambdacode.spring.boot.crud.service.task.TaskService;
+import kg.ab.commons.enums.TaskStatus;
+import kg.ab.service.task.dto.UpdateTaskReq;
+import kg.ab.entity.Task;
+import kg.ab.service.task.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

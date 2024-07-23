@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.commons.response.error;
+package kg.ab.commons.response.error;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
+import kg.ab.commons.enums.StatusCode;
 import lombok.Builder;
 import lombok.Data;
 

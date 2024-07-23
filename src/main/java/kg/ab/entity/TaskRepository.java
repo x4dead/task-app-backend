@@ -1,4 +1,4 @@
-package com.lambdacode.spring.boot.crud.entity;
+package kg.ab.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

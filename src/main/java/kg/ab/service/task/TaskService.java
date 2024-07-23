@@ -1,7 +1,8 @@
-package com.lambdacode.spring.boot.crud.service.task;
-import com.lambdacode.spring.boot.crud.service.task.dto.UpdateTaskReq;
-import com.lambdacode.spring.boot.crud.entity.Task;
-import com.lambdacode.spring.boot.crud.commons.response.Response;
+package kg.ab.service.task;
+
+import kg.ab.service.task.dto.UpdateTaskReq;
+import kg.ab.entity.Task;
+import kg.ab.commons.response.Response;
 import org.springframework.http.ResponseEntity;
 
 public interface TaskService {
@@ -13,5 +14,5 @@ public interface TaskService {
 
     ResponseEntity<Response> deleteTask(int id);
 
-    ResponseEntity<Response> updateTask(int id,  UpdateTaskReq req);
+    ResponseEntity<Response> updateTask(int id, UpdateTaskReq req);
 }

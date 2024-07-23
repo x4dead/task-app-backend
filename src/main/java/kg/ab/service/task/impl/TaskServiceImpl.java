@@ -1,15 +1,15 @@
-package com.lambdacode.spring.boot.crud.service.task.impl;
+package kg.ab.service.task.impl;
 
-import com.lambdacode.spring.boot.crud.commons.enums.TaskStatus;
-import com.lambdacode.spring.boot.crud.service.task.dto.UpdateTaskReq;
-import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
-import com.lambdacode.spring.boot.crud.entity.Task;
-import com.lambdacode.spring.boot.crud.entity.TaskRepository;
-import com.lambdacode.spring.boot.crud.commons.response.Response;
-import com.lambdacode.spring.boot.crud.commons.response.SuccessResponse;
-import com.lambdacode.spring.boot.crud.commons.response.exeption.CommonException;
-import com.lambdacode.spring.boot.crud.service.task.TaskService;
-import com.lambdacode.spring.boot.crud.utils.ValidationUtils;
+import kg.ab.commons.enums.TaskStatus;
+import kg.ab.service.task.dto.UpdateTaskReq;
+import kg.ab.commons.enums.StatusCode;
+import kg.ab.entity.Task;
+import kg.ab.entity.TaskRepository;
+import kg.ab.commons.response.Response;
+import kg.ab.commons.response.SuccessResponse;
+import kg.ab.commons.response.exeption.CommonException;
+import kg.ab.utils.ValidationUtils;
+import kg.ab.service.task.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

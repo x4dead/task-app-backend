@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.entity;
+package kg.ab.entity;
 
-import com.lambdacode.spring.boot.crud.commons.enums.TaskStatus;
-import com.lambdacode.spring.boot.crud.service.validator.ValidTaskStatus;
+import kg.ab.commons.enums.TaskStatus;
+import kg.ab.service.validator.ValidTaskStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

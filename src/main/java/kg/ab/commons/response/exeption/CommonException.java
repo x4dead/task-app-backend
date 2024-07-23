@@ -1,5 +1,6 @@
-package com.lambdacode.spring.boot.crud.commons.response.exeption;
-import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
+package kg.ab.commons.response.exeption;
+
+import kg.ab.commons.enums.StatusCode;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;

@@ -1,9 +1,9 @@
-package com.lambdacode.spring.boot.crud.controller;
+package kg.ab.controller;
 
-import com.lambdacode.spring.boot.crud.commons.response.error.Error;
-import com.lambdacode.spring.boot.crud.commons.response.error.ErrorResponse;
-import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
-import com.lambdacode.spring.boot.crud.commons.response.exeption.CommonException;
+import kg.ab.commons.response.error.Error;
+import kg.ab.commons.response.error.ErrorResponse;
+import kg.ab.commons.enums.StatusCode;
+import kg.ab.commons.response.exeption.CommonException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

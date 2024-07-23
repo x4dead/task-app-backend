@@ -1,7 +1,7 @@
-package com.lambdacode.spring.boot.crud.service.task.dto;
+package kg.ab.service.task.dto;
 
-import com.lambdacode.spring.boot.crud.commons.enums.TaskStatus;
-import com.lambdacode.spring.boot.crud.service.validator.ValidTaskStatus;
+import kg.ab.commons.enums.TaskStatus;
+import kg.ab.service.validator.ValidTaskStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

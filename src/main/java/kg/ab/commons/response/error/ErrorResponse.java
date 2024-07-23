@@ -1,5 +1,6 @@
-package com.lambdacode.spring.boot.crud.commons.response.error;
-import com.lambdacode.spring.boot.crud.commons.response.Response;
+package kg.ab.commons.response.error;
+
+import kg.ab.commons.response.Response;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.lambdacode.spring.boot.crud.utils;
-import com.lambdacode.spring.boot.crud.commons.enums.StatusCode;
-import com.lambdacode.spring.boot.crud.commons.response.exeption.CommonException;
+package kg.ab.utils;
+import kg.ab.commons.enums.StatusCode;
+import kg.ab.commons.response.exeption.CommonException;
 import jakarta.validation.ConstraintViolation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

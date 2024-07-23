@@ -1,6 +1,6 @@
-package com.lambdacode.spring.boot.crud.service.validator;
+package kg.ab.service.validator;
 
-import com.lambdacode.spring.boot.crud.commons.enums.TaskStatus;
+import kg.ab.commons.enums.TaskStatus;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

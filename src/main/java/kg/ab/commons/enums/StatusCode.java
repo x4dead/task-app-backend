@@ -1,4 +1,4 @@
-package com.lambdacode.spring.boot.crud.commons.enums;
+package kg.ab.commons.enums;
 
 public enum StatusCode {
     TEST,

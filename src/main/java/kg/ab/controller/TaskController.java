@@ -1,9 +1,9 @@
-package com.lambdacode.spring.boot.crud.controller;
+package kg.ab.controller;
 
-import com.lambdacode.spring.boot.crud.service.task.dto.UpdateTaskReq;
-import com.lambdacode.spring.boot.crud.entity.Task;
-import com.lambdacode.spring.boot.crud.commons.response.Response;
-import com.lambdacode.spring.boot.crud.service.task.TaskService;
+import kg.ab.service.task.dto.UpdateTaskReq;
+import kg.ab.entity.Task;
+import kg.ab.commons.response.Response;
+import kg.ab.service.task.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
