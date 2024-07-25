@@ -36,7 +36,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public BaseResponse<String> addTask(TaskDTO req) {
+    public BaseResponse<String>
+    addTask(TaskDTO req) {
         Task task = Util.taskDtoToEntity(req);
         taskRepository.save(task);
         return BaseResponse.<String>builder()

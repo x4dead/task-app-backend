@@ -25,6 +25,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 @ExtendWith(MockitoExtension.class)
 public class TaskControllerTest {
+
     @Mock
     private TaskService taskService;
     @InjectMocks
@@ -74,7 +75,8 @@ public class TaskControllerTest {
     void updateTask() throws Exception {
         UpdateTaskReq updateTaskReq = new UpdateTaskReq(TaskStatus.DONE, "task name", "desc");
         String taskJson = objectMapper.writeValueAsString(updateTaskReq);
-        mockMvc.perform(put("/api/v1/task/{id}", 1L).contentType(MediaType.APPLICATION_JSON).
+        mockMvc.perform(put("/api/v1/task/{id}", 1L).
+                        contentType(MediaType.APPLICATION_JSON).
                         content(taskJson)).
                 andExpect(status().isOk());
 
