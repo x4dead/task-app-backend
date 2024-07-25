@@ -4,7 +4,7 @@ import kg.ab.commons.enums.TaskStatus;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-public class TaskStatusValidator implements ConstraintValidator<ValidTaskStatus, TaskStatus> {
+public class TaskStatusValidator implements ConstraintValidator<TaskStatusValidation, TaskStatus> {
 
     @Override
     public boolean isValid(TaskStatus value, ConstraintValidatorContext context) {

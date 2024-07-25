@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = TaskStatusValidator.class)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidTaskStatus {
+public @interface TaskStatusValidation {
     String message() default "Invalid task status";
 
     Class<?>[] groups() default {};

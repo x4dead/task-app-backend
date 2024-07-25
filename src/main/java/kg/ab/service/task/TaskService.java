@@ -1,18 +1,23 @@
 package kg.ab.service.task;
 
-import kg.ab.service.task.dto.UpdateTaskReq;
+import kg.ab.dto.BaseResponse;
 import kg.ab.entity.Task;
-import kg.ab.commons.response.Response;
-import org.springframework.http.ResponseEntity;
+import kg.ab.service.task.dto.TaskDTO;
+import kg.ab.service.task.dto.UpdateTaskReq;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
+@Service
 public interface TaskService {
-    ResponseEntity<Response> addTask(Task req);
+    BaseResponse<String> addTask(TaskDTO req);
 
-    ResponseEntity<Response> getTasks();
+    BaseResponse<List<Task>> getTasks();
 
-    ResponseEntity<Response> getTask(int id);
+    BaseResponse<Task> getTask(Long id);
 
-    ResponseEntity<Response> deleteTask(int id);
+    BaseResponse<String> deleteTask(Long id);
 
-    ResponseEntity<Response> updateTask(int id, UpdateTaskReq req);
+    BaseResponse<String> updateTask(Long id, UpdateTaskReq req);
 }

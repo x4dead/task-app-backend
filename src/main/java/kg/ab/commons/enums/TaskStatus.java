@@ -2,6 +2,7 @@ package kg.ab.commons.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
+
 public enum TaskStatus {
     DONE("DONE"),
     NOT_DONE("NOT_DONE");
@@ -13,7 +14,10 @@ public enum TaskStatus {
 
     @JsonValue
     public String getValue() {
-        return this.name;
+
+        return this.name == null ? "" : this.name;
+
     }
+
 
 }

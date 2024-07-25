@@ -9,8 +9,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kg.ab.commons.enums.TaskStatus;
+import kg.ab.service.task.dto.TaskDTO;
 import kg.ab.service.task.dto.UpdateTaskReq;
-import kg.ab.entity.Task;
 import kg.ab.service.task.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,9 +41,9 @@ public class TaskControllerTest {
 
     @Test
     void addTask() throws Exception {
-        Task task = new Task(1,  TaskStatus.DONE, "desc", "name");
+        TaskDTO task = new TaskDTO(TaskStatus.DONE, "desc", "name");
         String taskJson = objectMapper.writeValueAsString(task);
-        mockMvc.perform(post("/task").
+        mockMvc.perform(post("/api/v1/task").
                         contentType(MediaType.APPLICATION_JSON).
                         content(taskJson)).
                 andExpect(status().isOk());
@@ -53,19 +53,19 @@ public class TaskControllerTest {
 
     @Test
     void getTasks() throws Exception {
-        mockMvc.perform(get("/task")).andExpect(status().isOk());
+        mockMvc.perform(get("/api/v1/task")).andExpect(status().isOk());
     }
 
     @Test
     void getTaskById() throws Exception {
-        mockMvc.perform(get("/task/{id}", "1")).
+        mockMvc.perform(get("/api/v1/task/{id}", 1L)).
                 andExpect(status().isOk());
 
     }
 
     @Test
     void deleteTask() throws Exception {
-        mockMvc.perform(delete("/task/{id}", 1)).
+        mockMvc.perform(delete("/api/v1/task/{id}", 1L)).
                 andExpect(status().isOk());
 
     }
@@ -74,7 +74,7 @@ public class TaskControllerTest {
     void updateTask() throws Exception {
         UpdateTaskReq updateTaskReq = new UpdateTaskReq(TaskStatus.DONE, "task name", "desc");
         String taskJson = objectMapper.writeValueAsString(updateTaskReq);
-        mockMvc.perform(put("/task/{id}", 1).contentType(MediaType.APPLICATION_JSON).
+        mockMvc.perform(put("/api/v1/task/{id}", 1L).contentType(MediaType.APPLICATION_JSON).
                         content(taskJson)).
                 andExpect(status().isOk());
 
