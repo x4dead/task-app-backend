@@ -7,7 +7,6 @@ import kg.ab.service.task.dto.UpdateTaskReq;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public interface TaskService {
